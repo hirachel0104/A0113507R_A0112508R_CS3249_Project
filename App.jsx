@@ -49,22 +49,25 @@ class App extends Component {
             <AccountsUIWrapper />
             { this.props.currentUser ?
              <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                    Enter Event Title:
             <input
               type="text"
               ref="eventTitle"
               placeholder="Event Title"
             />
+                    Enter Organiser Name:
             <input
               type="text"
               ref="organiser"
               placeholder="Organiser Name"
             />
+                    Enter Date and Time:
             <input
               type="text"
               ref="date"
               placeholder="Date and Time"
             />
-            
+            <input type="submit" value="Submit"></input>
           </form>:''
             }
             </header>
