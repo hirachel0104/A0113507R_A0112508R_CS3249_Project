@@ -46,23 +46,26 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>CS3249 Project: Remake- IVLE Events</h1>
-            <div> 
+            </header>
+    
+            <div id="create"> 
                         <AccountsUIWrapper />
             { this.props.currentUser ?
              <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                        <h4>Event Title</h4>
+                        <h2 className="createInner">General</h2>
+                        <h4 className="createInner">Event Title</h4>
             <input
               type="text"
               ref="eventTitle"
               placeholder="Event Title"
             /><br></br>
-                        <h4>Organiser</h4>
+                        <h4 className="createInner">Organiser</h4>
             <input
               type="text"
               ref="organiser"
               placeholder="Organiser Name"
             /><br></br>
-                        <h4>Committee</h4>
+                        <h4 className="createInner">Committee</h4>
                         <select className="dropdown" name="comm">
             <option value="c1">NUSSU</option>
             <option value="c2">Faculty Clubs</option>
@@ -72,7 +75,7 @@ class App extends Component {
             <option value="c6">Interest Groups</option>
             <option value="c7">Others</option>
             </select><br></br>
-                        <h4>Category</h4>
+                        <h4 className="createInner">Category</h4>
             <select className="dropdown" name="comm">
             <option value="1">Bashes</option>
             <option value="2">FBazaars</option>
@@ -82,36 +85,62 @@ class App extends Component {
             <option value="6">Annoucements</option>
             <option value="7">Others</option>
             </select><br></br>
-                        <h4>Tags</h4>
-            <input
+                        <h4 className="createInner">Tags</h4>
+            <input 
                 type="text"
                    /><br></br>
                         
-                        <h4>Display Start</h4>
-            <input
-                type="text"
-                ref="date"
-                placeholder="date and time"
-                   />
-            <ul class="sidenote">(One week processing time.)</ul><br></br>
-                        <h4>Display End</h4>
+                        <h4 className="createInner">Display Start</h4>
             <input
                 type="text"
                    />
-             <ul class="sidenote">(Max 14days or 1 day after event.)</ul><br></br>
+            <ul>(One week processing time.)</ul><br></br>
+                        <h4 className="createInner">Display End</h4>
+            <input
+                type="text"
+                   />
+             <ul>(Max 14days or 1 day after event.)</ul><br></br>
                <h4>Description</h4>
             <input
                 type="text"
                 placeholder="ckeditor-to-be-installed"
                    />
             <br></br>
+            
+            <h2 className="createInner">Event Details</h2>
+                        <h4 className="createInner">Date snd Time</h4>
+                      <input
+                type="text"
+                ref="date"
+                placeholder="date and time"
+                   />
+            <br></br>  
+                        <h4 className="createInner">Venue</h4>
+                      <input
+                type="text"
+                   />
+            <br></br>     
+                        <h4 className="createInner">Price</h4>
+                      <input
+                type="text"
+                   />
+            <br></br>  
+                        <h4 className="createInner">Agenda</h4>
+                      <input
+                type="text"
+                   />
+            <br></br>  
+                        <h4 className="createInner">Contact</h4>
+                      <input
+                type="text"
+                   />
+            <br></br>  
+                        
             <input type="submit" value="Submit"></input>
           </form>:''
             }
             </div>
             
-            </header>
-               
             
     <div id="navBar">
         <button id="createEvent">+ Create Event</button>
