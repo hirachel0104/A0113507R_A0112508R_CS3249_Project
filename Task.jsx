@@ -4,11 +4,14 @@ import React, { Component, PropTypes } from 'react';
 export default class Task extends Component {
   render() {
     return (
-      <li>{this.props.task.text}
-        <span className="text">
-          <strong>{this.props.task.username}</strong> 
-        </span>
-        </li>
+        <table id="eventTable">
+        <tr>
+            <td id="tableView"> <img src="/img/Eye.png" alt="eye"></img> </td>
+            <td id="tableEvent"> event aighoun vpuorbngp ongriuarg aonpurh {this.props.task.eventTitle}</td>
+            <td id="tableOrganiser">organiser afoirngpoirhtnvo ienrio [htnvoiehr] {this.props.task.organiser}</td>
+            <td id="tableBarDate">date angruigpo; prugpion rughapor {this.props.task.date}</td>
+            </tr>
+        </table>
     );
   }
 }

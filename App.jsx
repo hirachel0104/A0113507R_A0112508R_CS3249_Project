@@ -15,17 +15,24 @@ class App extends Component {
     event.preventDefault();
  
     // Find the text field via the React ref
-    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
- 
+    const eventTitle = ReactDOM.findDOMNode(this.refs.eventTitle).value.trim();
+    const organiser = ReactDOM.findDOMNode(this.refs.organiser).value.trim();
+    const date = ReactDOM.findDOMNode(this.refs.date).value.trim();
+         
     Tasks.insert({
-      text,
-      createdAt: new Date(), // current time
+        eventTitle,
+        organiser,
+        date,
+        
+        createdAt: new Date(), // current time
         owner: Meteor.userId(),           // _id of logged in user
-      username: Meteor.user().username,  // username of logged in user
+        username: Meteor.user().username,  // username of logged in user
     });
  
     // Clear form
-    ReactDOM.findDOMNode(this.refs.textInput).value = '';
+    ReactDOM.findDOMNode(this.refs.eventTitle).value = '';
+    ReactDOM.findDOMNode(this.refs.organiser).value = '';
+    ReactDOM.findDOMNode(this.refs.date).value = '';
   }
  
   renderTasks() {
@@ -39,12 +46,29 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>CS3249 Project: Remake- IVLE Events</h1>
+            <AccountsUIWrapper />
+            { this.props.currentUser ?
+             <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+            <input
+              type="text"
+              ref="eventTitle"
+              placeholder="Event Title"
+            />
+            <input
+              type="text"
+              ref="organiser"
+              placeholder="Organiser Name"
+            />
+            <input
+              type="text"
+              ref="date"
+              placeholder="Date and Time"
+            />
             
-        <AccountsUIWrapper />
-        
+          </form>:''
+            }
             </header>
-                    
-            
+                           
     <div id="navBar">
         <button id="createEvent">+ Create Event</button>
         <form>
@@ -53,8 +77,8 @@ class App extends Component {
             ref="searchInput"
             placeholder="Search"
             />
-            <p>Total {this.props.totalCount} items</p>
         </form>
+        <p id="totalDisplay">Total {this.props.totalCount} items</p>
             </div>
     <div id="titleBar">
     <div id="titleBarView">
@@ -69,11 +93,11 @@ class App extends Component {
     <div id="titleBarDate">
         <strong><h4>Event Date</h4></strong>
     </div>
-            </div>
             
         <ul>
           {this.renderTasks()}
         </ul>
+            </div>
       </div>
     );
   }

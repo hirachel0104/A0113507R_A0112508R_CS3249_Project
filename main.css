@@ -31,7 +31,7 @@ body {
     position: relative;
     z-index: 2;
     float: left;
-    width: 50%;
+    width: 70%;
     margin-bottom: 0;
     height: 34px;
     padding: 6px 12px;
@@ -47,40 +47,69 @@ body {
     margin-right: 10px;
 }
 
-#titleBar {
+#titleBar, #eventTable {
     width: 100%;
-    
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    display: table;
+    border-color: lightgray;
 }
 
-#titleBarView {
+#titleBarView, #tableView {
+    margin-right: 1px;
+    display: block;
     text-align: center;
-    margin-left: 10px;
-    width: 60px;
+    width: 10%;
     float: left;
 }
 
-#titleBarEvent {
+#titleBarEvent, #tableEvent {
+    margin-right: 1px;
+    display: block;
     color: #337ab7;
     text-align: left;
-    width: 40%;
+    width: 39%;
     float: left;
 }
 
-#titleBarOrganiser {
+#titleBarOrganiser, #tableOrganiser {
+    margin-right: 1px;
+    display: block;
     color: #337ab7;
     text-align: left;
-    width: 25%;
+    width: 24%;
     float: left;
 }
 
-#titleBarDate {
+#titleBarDate, #tableDate {
+    margin-right: 1px;
+    display: block;
     text-align: left;
-    width: 25%;
+    width: 24%;
     float: left;
+}
+
+#tableEvent, #tableOrganiser, #tableDate{
+    color: black;
+}
+
+#totalDisplay{
+    width: 10%;
+    height: 34px;
+    float: left;
+    margin-right: 100px;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
 }
 
 #createEvent {
