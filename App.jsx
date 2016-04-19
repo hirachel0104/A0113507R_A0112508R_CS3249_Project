@@ -20,6 +20,7 @@ class App extends Component {
     const date = ReactDOM.findDOMNode(this.refs.date).value.trim();
     const searchKey = (this.refs.searchInput).value.trim();
          
+         
     Tasks.insert({
         eventTitle,
         organiser,
@@ -47,7 +48,6 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>CS3249 Project: Remake- IVLE Events</h1>
-
             </header>
     
             <div id="create"> 
