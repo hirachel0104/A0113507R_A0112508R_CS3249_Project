@@ -19,8 +19,10 @@ body {
 
 /*Maple- start*/
 #navBar {
+    border-top: 1px solid #ddd;
+    padding: 6px;
     margin-left: 10px;
-    width: 100%;
+    width: 98%;
     float: left;
     font-weight: 100;
     align-content: center;
@@ -88,13 +90,12 @@ body {
 }
 
 #totalDisplay{
-    width: 10%;
+    width: 13%;
     height: 34px;
     float: left;
     margin-right: 100px;
     margin-top: 20px;
     display: inline-block;
-    padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
@@ -102,18 +103,17 @@ body {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
+    font-family: monospace;
 }
 
 #createEvent {
     width: 140px;
     height: 34px;
-    float: left;
-    margin-right: 100px;
-    margin-top: 20px;
     
     display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
+    margin-bottom: 25px;
+    margin-left: 40%;
+    margin-right: 40%;
     font-size: 14px;
     font-weight: normal;
     line-height: 1.42857143;
@@ -127,6 +127,23 @@ body {
     background: #5cb85c;
     color: white;
     border-color: #4cae4c;
+}
+
+#searchIcon {
+    width: 7%;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: white;
+    border-color: lightgray;
+    color: gray;
 }
 
 .container {
@@ -145,7 +162,7 @@ body {
 #create {
     position: relative;
     min-height: 1px;
-    padding: 15px;
+    padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
