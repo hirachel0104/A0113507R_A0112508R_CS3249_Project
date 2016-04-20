@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
+import { Link } from "react-router";
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
@@ -55,9 +56,9 @@ class App extends Component {
         <div id="navBar">
         <AccountsUIWrapper />
 
-          { this.props.currentUser ?
-            <button id="createEvent">+ Create Event</button>: ''
-          }
+          <Link to="addEvent">
+            <button id="createEvent">+ Create Event</button>
+          </Link> : '' 
 
           <form>
             <input id="search"
@@ -66,7 +67,9 @@ class App extends Component {
               placeholder="Search"
             />
           </form>
+
           <p id="totalDisplay">Total {this.props.totalCount} items</p>
+
         </div>
 
         <div id="titleBar">
