@@ -2,11 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
- 
 import { Tasks } from '../api/tasks.js';
 
 import Task from './Task.jsx';
-
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  
 // App component - represents the whole app
@@ -74,26 +72,21 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>CS3249 Project: Remake- IVLE Events</h1>
+        </header>
 
-            </header>
-    
-            <div id="create"> 
-                        <AccountsUIWrapper />
-            { this.props.currentUser ?
-                    <div>
-                        
-                    <div>
-        <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                        <h2 className="createInner">General</h2>
-                        <h4 className="createInner">Event Title</h4>
-            <input
+        
+
+        <div id="navBar">
+        <AccountsUIWrapper />
+
+          { this.props.currentUser ?
+            <button id="createEvent">+ Create Event</button>: ''
+          }
+
+          <form>
+            <input id="search"
               type="text"
-              ref="eventTitle"
-              placeholder="Event Title"
-            /><br></br>
-                        <h4 className="createInner">Organiser</h4>
-            <input
-              type="text"
+<<<<<<< HEAD
               ref="organiser"
               placeholder="Organiser Name"
             /><br></br>
@@ -177,8 +170,40 @@ class App extends Component {
             <br></br>  
                         
             <input id="createEvent" type="submit" value="+ Create Event"></input>
+=======
+              ref="searchInput"
+              placeholder="Search"
+            />
+>>>>>>> 04d135702eb5b56e66acacc2802efde8e56489d9
           </form>
+          <p id="totalDisplay">Total {this.props.totalCount} items</p>
         </div>
+
+        <div id="titleBar">
+          <div id="titleBarView">
+              <strong><h4>View</h4></strong>
+          </div>
+
+          
+          <div id="titleBarEvent">
+              <strong><h4>Event Title</h4></strong>
+          </div>
+
+          <div id="titleBarOrganiser">
+              <strong><h4>Event Organiser</h4></strong>
+          </div>
+
+          <div id="titleBarDate">
+              <strong><h4>Event Date</h4></strong>
+          </div>
+
+          { this.props.currentUser ?
+            <ul>
+              {this.renderTasks()}
+            </ul>: ''
+          }
+        </div>
+<<<<<<< HEAD
                         
                    <div id="navBar">
         <form>
@@ -214,6 +239,8 @@ class App extends Component {
                 {this.createSth()}
                 
             </div>
+=======
+>>>>>>> 04d135702eb5b56e66acacc2802efde8e56489d9
       </div>
     );
   }
