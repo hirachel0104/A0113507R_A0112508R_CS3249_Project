@@ -12,9 +12,9 @@ class View extends Component {
       <div className="container">
            <header>
            <h1>Student Events</h1>
-            <Link to="/">
-           <button id="close" type="button">X</button>
-               </Link>
+              <Link to="/">
+                <button id="close" type="button">X</button>
+              </Link>
            </header>
     
            <div className="titleBar">
@@ -57,8 +57,8 @@ class View extends Component {
            </div>
            
            <Link to="/">
-           <button id="close" type="button">X Close</button>
-               </Link>
+              <button id="close" type="button">X Close</button>
+           </Link>
     
         </div>
     );
@@ -69,4 +69,4 @@ export default createContainer(() => {
   return {
       tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
   };
-}, AddEvent);
+}, View);
