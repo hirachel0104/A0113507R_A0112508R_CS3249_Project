@@ -133,8 +133,8 @@ class AddEvent extends Component {
                 /><br></br>  
                         
                 <input type="submit" value="Submit"></input>
-              </form>:''
-            }
+              </form>
+            :''}
           </div>
 
           <ul>
