@@ -10,7 +10,7 @@ export default class Task extends Component {
             <tr id="titleBar">
             <td id="tableView">
               <Link to="view">
-                <button><img src="../../img/Eye.png"></img></button>
+                <button><input type="image" src="img/Eye.png" value="View"/></button>
               </Link>
             </td>
             <td id="tableEvent">{this.props.task.eventTitle}</td>
@@ -45,4 +45,5 @@ Task.propTypes = {
   // This component gets the task to display through a React prop.
   // We can use propTypes to indicate it is required
   task: PropTypes.object.isRequired,
+  showTask: PropTypes.object.isRequired,
 };

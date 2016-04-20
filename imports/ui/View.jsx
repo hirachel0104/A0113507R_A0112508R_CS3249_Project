@@ -11,6 +11,10 @@ import AddEvent from './AddEvent.jsx';
 
 class View extends Component {
     
+    printSth(){
+        return this.props.Count
+    }
+    
   render() {
    return (
       <div className="container">
@@ -24,7 +28,7 @@ class View extends Component {
            <div>
                <tr id="titleBar">
                    <strong><h3>Title:</h3></strong>
-                <p>title</p>
+                <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Organiser:</h3></strong>
@@ -56,7 +60,7 @@ class View extends Component {
                </tr>
                <tr id="titleBar">
                <strong><h3>Contact:</h3></strong>
-                   <p>..</p>
+                   <p>{this.printSth()}</p>
                </tr>
            </div>
            
@@ -68,9 +72,15 @@ class View extends Component {
     );
   }
 }
+
+View.propTypes = {
+    task: PropTypes.object.isRequired,
+    count: PropTypes.number.isRequired,
+};
  
 export default createContainer(() => {
   return {
       tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+      count: Tasks.find().count(),
   };
 }, View);
