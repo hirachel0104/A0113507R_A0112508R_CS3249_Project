@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>CS3249 Project: Remake- IVLE Events</h1>
+          <h1>IVLE Event List</h1>
         </header>
 
         <AccountsUIWrapper />

@@ -5,6 +5,10 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
+import Task from './Task.jsx';
+import App from './App.jsx';
+import AddEvent from './AddEvent.jsx';
+
 class View extends Component {
     
   render() {
@@ -12,47 +16,47 @@ class View extends Component {
       <div className="container">
            <header>
            <h1>Student Events</h1>
-              <Link to="/">
-                <button id="close" type="button">X</button>
+               <Link to="/">
+                <button id="x" type="button">X</button>
               </Link>
            </header>
-    
-           <div className="titleBar">
+           
+           <div>
                <tr id="titleBar">
                    <strong><h3>Title:</h3></strong>
-                <p>{this.props.task.eventTitle}</p>
+                <p>title</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Organiser:</h3></strong>
-                   <p>{this.props.task.organiser}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Tags:</h3></strong>
-                   <p>{this.props.task.tags}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Description:</h3></strong>
-                   <p>{this.props.task.description}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Date and Time:</h3></strong>
-                   <p>{this.props.task.date}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Venue:</h3></strong>
-                   <p>{this.props.task.venue}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Price:</h3></strong>
-                   <p>{this.props.task.price}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Agenda:</h3></strong>
-                   <p>{this.props.task.agenda}</p>
+                   <p>..</p>
                </tr>
                <tr id="titleBar">
                <strong><h3>Contact:</h3></strong>
-                   <p>{this.props.task.contact}</p>
+                   <p>..</p>
                </tr>
            </div>
            

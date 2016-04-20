@@ -70,7 +70,7 @@ class AddEvent extends Component {
    return (
       <div className="container">
         <header>
-          <h1>CS3249 Project: Remake- IVLE Events</h1>
+          <h1>Create New Event</h1>
         </header>
     
            <AccountsUIWrapper />
