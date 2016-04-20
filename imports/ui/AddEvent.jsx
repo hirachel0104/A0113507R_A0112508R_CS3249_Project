@@ -76,7 +76,7 @@ class AddEvent extends Component {
             { this.props.currentUser ?
         <div id="create"> 
               <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                <Link to="">
+                <Link to="/">
                     <button id="close">X Close</button>
                     </Link>
                 <h2 className="createInner">General</h2>
@@ -152,9 +152,8 @@ class AddEvent extends Component {
                   type="text"
                     ref="contact"
                 /><br></br>  
-                
-                <input type="submit" value="Submit Event"></input>
-                  <Link to="">
+                <button id="close" type="submit">Submit</button>
+                  <Link to="/">
                     <button id="close">X Close</button>
                     </Link>
               </form>
