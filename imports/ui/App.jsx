@@ -43,6 +43,8 @@ class App extends Component {
                 placeholder="Search"
               />
           </form>
+            <button id="searchIcon" type="submit">Search</button>
+            <button id="searchIcon">Undo</button>
 
           <p id="totalDisplay">Total {this.props.totalCount} items</p>
         </div>

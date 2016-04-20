@@ -127,8 +127,10 @@ body {
 }
 
 #searchIcon {
-    width: 7%;
+    width: 12%;
+    padding: 1px;
     margin-right: 5px;
+    margin-left: 1px;
     font-size: 12px;
     font-weight: normal;
     line-height: 1.42857143;
