@@ -5,7 +5,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
-import AddEvent from './AddEvent.jsx';
+import AddEvent from './AddEvent.jsx'
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
@@ -27,9 +27,11 @@ class App extends Component {
         </header>
 
     
-        <div id="navBar">
+        
           <AccountsUIWrapper />
-
+            { this.props.currentUser ?
+<div>
+        <div id="navBar">
           <Link to="addEvent">
             <button id="createEvent">+ Create Event</button>
           </Link>
@@ -45,26 +47,25 @@ class App extends Component {
           <p id="totalDisplay">Total {this.props.totalCount} items</p>
         </div>
         
-        <div id="titleBar">
-          <div id="titleBarView">
+        <tr id="titleBar">
+          <td id="tableView">
               <strong><h4>View</h4></strong>
-                  </div>
-          <div id="titleBarEvent">
+                  </td>
+          <td id="tableEvent">
               <strong><h4>Event Title</h4></strong>
-                  </div>
-          <div id="titleBarOrganiser">
+                  </td>
+          <td id="tableOrganiser">
               <strong><h4>Event Organiser</h4></strong>
-                  </div>
-          <div id="titleBarDate">
+                  </td>
+          <td id="tableBarDate">
               <strong><h4>Event Date</h4></strong>
-          </div>
+          </td>
+    </tr>
 
-          { this.props.currentUser ?
-            <ul>
               {this.renderTasks()}
-            </ul>: ''
+            </div>: ''
           }
-        </div>
+        
       </div>
     );
   }
