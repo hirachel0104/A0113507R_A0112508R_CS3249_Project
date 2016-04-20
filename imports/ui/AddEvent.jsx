@@ -9,19 +9,32 @@ import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  
 // AddEvent component - represents the whole app
 class AddEvent extends Component {
-     handleSubmit(event) {
+    handleSubmit(event) {
     event.preventDefault();
  
     // Find the text field via the React ref
     const eventTitle = ReactDOM.findDOMNode(this.refs.eventTitle).value.trim();
     const organiser = ReactDOM.findDOMNode(this.refs.organiser).value.trim();
     const date = ReactDOM.findDOMNode(this.refs.date).value.trim();
-    const searchKey = (this.refs.searchInput).value.trim();
+    ReactDOM.findDOMNode(this.refs.organiser).value.trim();
+    const committee = ReactDOM.findDOMNode(this.refs.committee).value.trim();
+    const category = ReactDOM.findDOMNode(this.refs.category).value.trim();
+    const tags = ReactDOM.findDOMNode(this.refs.tags).value.trim();
+    const displayStart = ReactDOM.findDOMNode(this.refs.displayStart).value.trim();
+    const displayEnd = ReactDOM.findDOMNode(this.refs.displayEnd).value.trim();
+    const description = ReactDOM.findDOMNode(this.refs.description).value.trim();
+    const venue = ReactDOM.findDOMNode(this.refs.venue).value.trim();
+    const price = ReactDOM.findDOMNode(this.refs.price).value.trim();
+    const agenda = ReactDOM.findDOMNode(this.refs.agenda).value.trim();
+    const contact = ReactDOM.findDOMNode(this.refs.contact).value.trim();
+         
+         const filterText = ReactDOM.findDOMNode (this.refs.searchInput).value.trim();
          
     Tasks.insert({
         eventTitle,
         organiser,
         date,
+        committee,
         
         createdAt: new Date(), // current time
         owner: Meteor.userId(),           // _id of logged in user
@@ -32,6 +45,17 @@ class AddEvent extends Component {
     ReactDOM.findDOMNode(this.refs.eventTitle).value = '';
     ReactDOM.findDOMNode(this.refs.organiser).value = '';
     ReactDOM.findDOMNode(this.refs.date).value = '';
+    ReactDOM.findDOMNode(this.refs.committee).value = 'c1';
+    ReactDOM.findDOMNode(this.refs.category).value = '1';
+    ReactDOM.findDOMNode(this.refs.tags).value = '';
+    ReactDOM.findDOMNode(this.refs.displayStart).value = '';
+    ReactDOM.findDOMNode(this.refs.displayEnd).value = '';
+    ReactDOM.findDOMNode(this.refs.description).value = '';
+    ReactDOM.findDOMNode(this.refs.venue).value = '';
+    ReactDOM.findDOMNode(this.refs.price).value = '';
+    ReactDOM.findDOMNode(this.refs.agenda).value = '';
+    ReactDOM.findDOMNode(this.refs.contact).value = '';
+    ReactDOM.findDOMNode(this.refs.searchInput).value = '';
   }
  
   renderTasks() {
@@ -107,7 +131,7 @@ class AddEvent extends Component {
             
                 <h2 className="createInner">Event Details</h2>
                 
-                <h4 className="createInner">Date snd Time</h4>
+                <h4 className="createInner">Date and Time</h4>
                 <input
                   type="text"
                   ref="date"
@@ -133,23 +157,13 @@ class AddEvent extends Component {
                 /><br></br>  
                         
                 <input type="submit" value="Submit"></input>
-              </form>
-            :''}
+              </form> :''
+            }
           </div>
-
-          <ul>
-            {this.renderTasks()}
-          </ul>
         </div>
     );
   }
 }
-
-AddEvent.propTypes = {
-  tasks: PropTypes.array.isRequired,
-  totalCount: PropTypes.number.isRequired,
-  currentUser: PropTypes.object,
-};
  
 export default createContainer(() => {
   return {
