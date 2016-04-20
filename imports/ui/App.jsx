@@ -5,6 +5,8 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
+import AddEvent from './AddEvent.jsx';
+
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  

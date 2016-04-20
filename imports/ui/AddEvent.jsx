@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
+import { Link } from "react-router";
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
@@ -78,6 +79,9 @@ class AddEvent extends Component {
           <AccountsUIWrapper />
             { this.props.currentUser ?
               <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+                    <Link to="">
+                    <button>X Close</button>
+                    </Link>
                 <h2 className="createInner">General</h2>
                 <h4 className="createInner">Event Title</h4>
                 <input
@@ -146,8 +150,9 @@ class AddEvent extends Component {
                 <input
                   type="text"
                 /><br></br>  
-                        
+                
                 <input type="submit" value="Submit"></input>
+                    
               </form> :''
             }
           </div>
