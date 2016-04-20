@@ -17,6 +17,25 @@ export default class Task extends Component {
     );
   }
 }
+
+export default class ShowTask extends Component {
+  render() {
+    return (
+      <ul>
+        <li id="Title">{this.props.task.eventTitle} </li>
+        <li id="Organizer">{this.props.task.organiser} </li>
+        <li id="Tags">{this.props.task.tags} </li>
+        <li id="Description">{this.props.task.description} </li>
+        <li id="Date & Time">{this.props.task.date}</li>
+        <li id="Venue">{this.props.task.venue} </li>
+        <li id="Price">{this.props.task.price} </li>
+        <li id="Agenda">{this.props.task.agenda} </li>
+        <li id="Contact">{this.props.task.contact} </li>
+        <li id="Hits">hit? </li>
+      </ul>
+    );
+  }
+}
  
 Task.propTypes = {
   // This component gets the task to display through a React prop.

@@ -26,46 +26,45 @@ class App extends Component {
           <h1>CS3249 Project: Remake- IVLE Events</h1>
         </header>
 
-          <AccountsUIWrapper />
-            { this.props.currentUser ?
-<div>
-        <div id="navBar">
-          <Link to="addEvent">
-            <button id="createEvent">+ Create Event</button>
-          </Link>
+        <AccountsUIWrapper />
+          { this.props.currentUser ?
+        <div>
+          <div id="navBar">
+            <Link to="addEvent">
+              <button id="createEvent">+ Create Event</button>
+            </Link>
 
-          <form>
-              <input id="search"
-                type="text"
-                ref="searchInput"
-                placeholder="Search"
-              />
-          </form>
-            <button id="searchIcon" type="submit">Search</button>
-            <button id="searchIcon">Undo</button>
+            <form>
+                <input id="search"
+                  type="text"
+                  ref="searchInput"
+                  placeholder="Search"
+                />
+            </form>
+              <button id="searchIcon" type="submit">Search</button>
+              <button id="searchIcon">Undo</button>
 
-          <p id="totalDisplay">Total {this.props.totalCount} items</p>
-        </div>
-        
-        <tr id="titleBar">
-          <td id="tableView">
-              <strong><h4>View</h4></strong>
-                  </td>
-          <td id="tableEvent">
-              <strong><h4>Event Title</h4></strong>
-                  </td>
-          <td id="tableOrganiser">
-              <strong><h4>Event Organiser</h4></strong>
-                  </td>
-          <td id="tableBarDate">
-              <strong><h4>Event Date</h4></strong>
-          </td>
-    </tr>
+            <p id="totalDisplay">Total {this.props.totalCount} items</p>
+          </div>
+      
+          <tr id="titleBar">
+            <td id="tableView">
+                <strong><h4>View</h4></strong>
+                    </td>
+            <td id="tableEvent">
+                <strong><h4>Event Title</h4></strong>
+                    </td>
+            <td id="tableOrganiser">
+                <strong><h4>Event Organiser</h4></strong>
+                    </td>
+            <td id="tableBarDate">
+                <strong><h4>Event Date</h4></strong>
+            </td>
+          </tr>
 
-              {this.renderTasks()}
-            </div>: ''
-          }
-        
+            {this.renderTasks()}
+          </div>: ''
+        }
       </div>
     );
   }

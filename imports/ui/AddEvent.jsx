@@ -6,7 +6,8 @@ import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
- 
+import App from './App.jsx';
+
 // AddEvent component - represents the whole app
 class AddEvent extends Component {
     handleSubmit(event) {
@@ -154,9 +155,9 @@ class AddEvent extends Component {
                 /><br></br>  
                 
                 <input type="submit" value="Submit Event"></input>
-                  <Link to="">
-                    <button id="close">X Close</button>
-                    </Link>
+                <Link to="">
+                  <button id="close">X Close</button>
+                </Link>
               </form>
           </div>:''
            }
