@@ -85,14 +85,12 @@ class AddEvent extends Component {
                   ref="eventTitle"
                   placeholder="Event Title"
                 /><br></br>
-
                 <h4 className="createInner">Organiser</h4>
                 <input
                   type="text"
                   ref="organiser"
                   placeholder="Organiser Name"
                 /><br></br>
-
                 <h4 className="createInner">Committee</h4>
                 <select className="dropdown" name="comm">
                 <option value="c1">NUSSU</option>
@@ -103,7 +101,6 @@ class AddEvent extends Component {
                 <option value="c6">Interest Groups</option>
                 <option value="c7">Others</option>
                 </select><br></br>
-
                 <h4 className="createInner">Category</h4>
                 <select className="dropdown" name="comm">
                 <option value="1">Bashes</option>
@@ -114,18 +111,15 @@ class AddEvent extends Component {
                 <option value="6">Annoucements</option>
                 <option value="7">Others</option>
                 </select><br></br>
-
                 <h4 className="createInner">Tags</h4>
                 <input type="text"/><br></br>
                             
                 <h4 className="createInner">Display Start</h4>
                 <input type="text"/>
                 <ul>(One week processing time.)</ul><br></br>
-
                 <h4 className="createInner">Display End</h4>
                 <input type="text"/>
                 <ul>(Max 14days or 1 day after event.)</ul><br></br>
-
                 <h4>Description</h4>
                 <input type="text" placeholder="ckeditor-to-be-installed"/><br></br>
             
@@ -140,17 +134,14 @@ class AddEvent extends Component {
                         
                 <h4 className="createInner">Venue</h4>
                 <input type="text"/><br></br>   
-
                 <h4 className="createInner">Price</h4>
                 <input
                   type="text"
                 /><br></br>  
-
                 <h4 className="createInner">Agenda</h4>
                 <input
                   type="text"
                 /><br></br>  
-
                 <h4 className="createInner">Contact</h4>
                 <input
                   type="text"
