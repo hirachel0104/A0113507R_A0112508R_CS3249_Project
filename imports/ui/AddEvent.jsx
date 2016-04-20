@@ -151,8 +151,9 @@ class AddEvent extends Component {
                   type="text"
                 /><br></br>  
                 
+                    <Link to="">
                 <input type="submit" value="Submit"></input>
-                    
+                    </Link>
               </form> :''
             }
           </div>
