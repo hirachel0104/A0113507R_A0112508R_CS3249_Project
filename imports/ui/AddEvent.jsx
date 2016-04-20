@@ -5,6 +5,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  
 // AddEvent component - represents the whole app
 class AddEvent extends Component {
@@ -71,9 +72,13 @@ class AddEvent extends Component {
           <h1>CS3249 Project: Remake- IVLE Events</h1>
         </header>
     
+           <AccountsUIWrapper />
+            { this.props.currentUser ?
         <div id="create"> 
               <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                    
+                <Link to="">
+                    <button id="close">X Close</button>
+                    </Link>
                 <h2 className="createInner">General</h2>
                 <h4 className="createInner">Event Title</h4>
                 <input
@@ -153,7 +158,9 @@ class AddEvent extends Component {
                     <button id="close">X Close</button>
                     </Link>
               </form>
-          </div>
+          </div>:''
+           }
+           
         </div>
     );
   }
@@ -162,5 +169,6 @@ class AddEvent extends Component {
 export default createContainer(() => {
   return {
       tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+      currentUser: Meteor.user(),
   };
 }, AddEvent);
