@@ -26,8 +26,6 @@ class App extends Component {
           <h1>CS3249 Project: Remake- IVLE Events</h1>
         </header>
 
-    
-        
           <AccountsUIWrapper />
             { this.props.currentUser ?
 <div>

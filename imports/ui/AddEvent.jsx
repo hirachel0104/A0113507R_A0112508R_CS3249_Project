@@ -5,8 +5,6 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
-import Task from './Task.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  
 // AddEvent component - represents the whole app
 class AddEvent extends Component {
@@ -29,13 +27,20 @@ class AddEvent extends Component {
     const agenda = ReactDOM.findDOMNode(this.refs.agenda).value.trim();
     const contact = ReactDOM.findDOMNode(this.refs.contact).value.trim();
          
-         const filterText = ReactDOM.findDOMNode (this.refs.searchInput).value.trim();
-         
     Tasks.insert({
         eventTitle,
         organiser,
         date,
         committee,
+        category,
+        tags,
+        displayStart,
+        displayEnd,
+        description,
+        venue,
+        price,
+        agenda,
+        contact,
         
         createdAt: new Date(), // current time
         owner: Meteor.userId(),           // _id of logged in user
@@ -56,17 +61,8 @@ class AddEvent extends Component {
     ReactDOM.findDOMNode(this.refs.price).value = '';
     ReactDOM.findDOMNode(this.refs.agenda).value = '';
     ReactDOM.findDOMNode(this.refs.contact).value = '';
-    ReactDOM.findDOMNode(this.refs.searchInput).value = '';
   }
  
-  renderTasks() {
-    return this.props.tasks.map((task) => (
-      <Task key={task._id} task={task} />
-    ));
-  }
-    
-    createSth(){
-    }
  
   render() {
    return (
@@ -76,12 +72,8 @@ class AddEvent extends Component {
         </header>
     
         <div id="create"> 
-          <AccountsUIWrapper />
-            { this.props.currentUser ?
               <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                    <Link to="">
-                    <button>X Close</button>
-                    </Link>
+                    
                 <h2 className="createInner">General</h2>
                 <h4 className="createInner">Event Title</h4>
                 <input
@@ -96,7 +88,7 @@ class AddEvent extends Component {
                   placeholder="Organiser Name"
                 /><br></br>
                 <h4 className="createInner">Committee</h4>
-                <select className="dropdown" name="comm">
+                <select className="dropdown" ref="committee">
                 <option value="c1">NUSSU</option>
                 <option value="c2">Faculty Clubs</option>
                 <option value="c3">Halls of Residencies</option>
@@ -106,7 +98,7 @@ class AddEvent extends Component {
                 <option value="c7">Others</option>
                 </select><br></br>
                 <h4 className="createInner">Category</h4>
-                <select className="dropdown" name="comm">
+                <select className="dropdown" ref="category">
                 <option value="1">Bashes</option>
                 <option value="2">FBazaars</option>
                 <option value="3">Competitions/Tournament</option>
@@ -116,16 +108,16 @@ class AddEvent extends Component {
                 <option value="7">Others</option>
                 </select><br></br>
                 <h4 className="createInner">Tags</h4>
-                <input type="text"/><br></br>
+                <input ref="tags" type="text"/><br></br>
                             
                 <h4 className="createInner">Display Start</h4>
-                <input type="text"/>
+                <input ref="displayStart" type="text"/>
                 <ul>(One week processing time.)</ul><br></br>
                 <h4 className="createInner">Display End</h4>
-                <input type="text"/>
+                <input ref="displayEnd" type="text"/>
                 <ul>(Max 14days or 1 day after event.)</ul><br></br>
                 <h4>Description</h4>
-                <input type="text" placeholder="ckeditor-to-be-installed"/><br></br>
+                <input ref="description" type="text" placeholder="ckeditor-to-be-installed"/><br></br>
             
                 <h2 className="createInner">Event Details</h2>
                 
@@ -137,25 +129,30 @@ class AddEvent extends Component {
                 /><br></br>  
                         
                 <h4 className="createInner">Venue</h4>
-                <input type="text"/><br></br>   
+                <input type="text"
+                    ref="venue"
+                    /><br></br>   
                 <h4 className="createInner">Price</h4>
                 <input
                   type="text"
+                    ref="price"
                 /><br></br>  
                 <h4 className="createInner">Agenda</h4>
                 <input
                   type="text"
+                    ref="agenda"
                 /><br></br>  
                 <h4 className="createInner">Contact</h4>
                 <input
                   type="text"
+                    ref="contact"
                 /><br></br>  
                 
-                    <Link to="">
-                <input type="submit" value="Submit"></input>
+                <input type="submit" value="Submit Event"></input>
+                  <Link to="">
+                    <button id="close">X Close</button>
                     </Link>
-              </form> :''
-            }
+              </form>
           </div>
         </div>
     );
@@ -165,7 +162,5 @@ class AddEvent extends Component {
 export default createContainer(() => {
   return {
       tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
-      totalCount: Tasks.find().count(),
-      currentUser: Meteor.user(),
   };
 }, AddEvent);
