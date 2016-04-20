@@ -154,10 +154,11 @@ class AddEvent extends Component {
                     ref="contact"
                 /><br></br>  
 
-                <button id="close" type="submit">Submit</button>
                   <Link to="/">
                     <button id="close">X Close</button>
                   </Link>
+                  
+                   <button id="close" type="submit">Submit</button>
               </form>
           </div>:''
            }

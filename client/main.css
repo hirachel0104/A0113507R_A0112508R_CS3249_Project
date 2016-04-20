@@ -181,7 +181,8 @@ body {
 }
 
 #close {
-    width: 100%;
+    width: 15%;
+    float: right;
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 13px;
@@ -189,9 +190,9 @@ body {
     white-space: nowrap;
     vertical-align: middle;
     
-    background: #5cb85c;
-    color: white;
-    border-color: #4cae4c;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
 }
 
 

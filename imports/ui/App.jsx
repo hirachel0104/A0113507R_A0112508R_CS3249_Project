@@ -11,8 +11,8 @@ import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
  
 // App component - represents the whole app
-class App extends Component {
- 
+class App extends Component {    
+    
   renderTasks() {
     return this.props.tasks.map((task) => (
       <Task key={task._id} task={task} />
