@@ -10,7 +10,7 @@ export default class Task extends Component {
             <tr id="titleBar">
             <td id="tableView">
               <Link to="view">
-                <button><input type="image" src="img/Eye.png" value="View"/></button>
+                <button><img src="Eye.png"></img></button>
               </Link>
             </td>
             <td id="tableEvent">{this.props.task.eventTitle}</td>
