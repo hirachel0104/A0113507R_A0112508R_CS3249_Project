@@ -5,7 +5,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 import { Link } from "react-router";
 
-import AddEvent from './AddEvent.jsx'
+import AddEvent from './AddEvent.jsx';
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
@@ -57,7 +57,7 @@ class App extends Component {
           <td id="tableOrganiser">
               <strong><h4>Event Organiser</h4></strong>
                   </td>
-          <td id="tableBarDate">
+          <td id="tableDate">
               <strong><h4>Event Date</h4></strong>
           </td>
     </tr>
