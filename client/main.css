@@ -67,7 +67,7 @@ body {
 #tableEvent {
     color: #337ab7;
     text-align: left;
-    width: 39%;
+    width: 44%;
     float: left;
 }
 
@@ -80,20 +80,23 @@ body {
 
 #tableDate {
     text-align: left;
-    width: 24%;
+    width: 14%;
     float: left;
 }
 
-#tableEvent, #tableOrganiser, #tableDate{
+#tableView, #tableEvent, #tableOrganiser, #tableDate{
+    display: table-cell;
+    margin: 1%;
     color: black;
 }
 
 #totalDisplay{
-    width: 10%;
+    width: 100px;
     height: 34px;
     float: left;
     display: inline-block;
-    margin-bottom: 0;
+    margin: 5px;
+    padding: 5px;
     font-size: 14px;
     font-weight: normal;
     line-height: 1.42857143;
@@ -106,8 +109,7 @@ body {
 #createEvent {
     width: 140px;
     height: 34px;
-    margin-right: 10px;
-    margin-top: 15px;
+    margin: 15px;
     float: left;
     display: table;
     position: relative;
@@ -127,10 +129,9 @@ body {
 }
 
 #searchIcon {
-    width: 12%;
-    padding: 1px;
-    margin-right: 5px;
-    margin-left: 1px;
+    width: 70px;
+    padding: 2px;
+    margin: 5px;
     font-size: 12px;
     font-weight: normal;
     line-height: 1.42857143;
@@ -150,6 +151,9 @@ body {
   margin: 0 auto;
   min-height: 100%;
   background: white;
+    
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     
     padding: 8px;
     line-height: 1.42857143;
